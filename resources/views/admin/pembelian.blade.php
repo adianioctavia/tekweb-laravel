@@ -1,6 +1,6 @@
 <x-admin-layout>
     <x-slot name="header">
-            {{ __('Pembelian') }}
+            {{ __('Daftar Belanja') }}
     </x-slot>
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">

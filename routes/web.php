@@ -1,43 +1,56 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProdukController;
+use App\Models\Produk;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/', function () {
-    return view('user');
+    return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 
-Route::get('/akun', function () {
-    return view('akun');
-})->middleware(['auth'])->name('akun');
+// Untuk Admin
+Route::group(['middleware' => ['auth', "role:admin"]], function () {
+    // Akun
+    Route::get('/akun', function () {
+        return view('admin.akun');
+    })->name('akun');
 
-Route::get('/pelanggan', function () {
-    return view('pelanggan');
-})->middleware(['auth'])->name('pelanggan');
+    // Pelanggan
+    Route::get('/pelanggan', function () {
+        return view('admin.pelanggan');
+    })->name('pelanggan');
 
-Route::get('/pembelian', function () {
-    return view('pembelian');
-})->middleware(['auth'])->name('pembelian');
+    // Pembelian
+    Route::get('/pembelian', function () {
+        return view('admin.pembelian');
+    })->name('pembelian');
 
-Route::get('/produk', function () {
-    return view('produk');
-})->middleware(['auth'])->name('produk');
+    // Produk
+    Route::get('/produk', [ProdukController::class, 'index'])
+        ->name('produk');
+
+    Route::get('/produk-add', [ProdukController::class, 'create'])
+        ->name('produk-add');
+
+    Route::post('/produk-add', [ProdukController::class, 'store'])
+        ->name('produk-add');
+
+    Route::get('/produk-edit/{id}', [ProdukController::class, 'edit'])
+        ->name('produk-edit');
+
+    Route::put('/produk-edit/{id}', [ProdukController::class, 'update'])
+        ->name('produk-edit');
+
+    Route::delete('/produk-delete/{id}', [ProdukController::class, 'destroy'])
+        ->name('produk-delete');
+});
+
+// Untuk Pelanggan
+Route::group(['middleware' => ['auth', 'role:pelanggan']], function () {
+});
 
 require __DIR__ . '/auth.php';
