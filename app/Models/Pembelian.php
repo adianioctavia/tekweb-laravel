@@ -14,6 +14,11 @@ class Pembelian extends Model
 
     public function pelanggan()
     {
-        return $this->hasMany(Pelanggan::class);
+        return $this->hasOne(Pelanggan::class);
+    }
+
+    public function produk()
+    {
+        return $this->hasMany(Produk::class);
     }
 }

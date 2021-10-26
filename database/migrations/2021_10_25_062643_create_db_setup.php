@@ -42,7 +42,6 @@ class CreateDbSetup extends Migration
         Schema::create('tb_pembelian', function (Blueprint $table) {
             $table->id();
             $table->dateTime('tgl');
-            $table->string('ekspedisi', '255');
             $table->integer('total');
             $table->timestamps();
         });

@@ -36,7 +36,7 @@
                 @enderror
             </div>
             <div class="mt-3" >
-                <button class="px-2 py-1 bg-green-500 rounded-lg" type="submit">
+                <button class="px-2 py-1 text-black bg-gray-300 border border-black hover:bg-yellow-500 rounded-lg" type="submit">
                     Save
                 </button>
             </div>

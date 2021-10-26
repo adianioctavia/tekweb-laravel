@@ -31,8 +31,11 @@
        
         <div class="mx-4">
             <p class="border border-black rounded pl-6 text-2xl bg-my">Kategori</p>
-            <p class="border border-black rounded pl-6 text-2xl">Kursi</p>
-            <p class="border border-black rounded pl-6 text-2xl">Meja</p>
+            @foreach (App\Models\Kategori::all() as $item)
+            <div class="w-full">
+                <a href="" class="block border border-black rounded pl-6 text-2xl w-full">{{$item->nama_kategori}}</a>
+            </div>
+            @endforeach
         </div>
     </aside>
 

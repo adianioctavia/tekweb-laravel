@@ -45,6 +45,8 @@ Route::group(['middleware' => ['auth', "role:admin"]], function () {
 
 // Untuk Pelanggan
 Route::group(['middleware' => ['auth', 'role:pelanggan']], function () {
+    Route::get('/show-produk/{id}', [ProdukController::class, 'show'])
+        ->name('show-produk');
 });
 
 require __DIR__ . '/auth.php';

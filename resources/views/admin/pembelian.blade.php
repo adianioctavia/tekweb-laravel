@@ -18,7 +18,6 @@
                                     <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Nama Produk</th>
                                     <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Tanggal Pembelian</th>
                                     <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Jumlah Pembelian</th>
-                                    <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Ekspedisi</th>
                                     <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Total Pembelian</th>
                                     <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Alamat</th>
                                     <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Status</th>
@@ -27,46 +26,12 @@
                             <tbody>
                                 <tr class="hover:bg-grey-lighter">
                                     <td class="py-4 px-6 border-b border-grey-light">1</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">1</td>
                                     <td class="py-4 px-6 border-b border-grey-light">Smith</td>
                                     <td class="py-4 px-6 border-b border-grey-light">Kursi Rotan</td>
                                     <td class="py-4 px-6 border-b border-grey-light">01/10/2021</td>
                                     <td class="py-4 px-6 border-b border-grey-light">2</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">JNE</td>
                                     <td class="py-4 px-6 border-b border-grey-light">1.000.000</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Terkirim</td>
-                                </tr>
-                                <tr class="hover:bg-grey-lighter">
-                                    <td class="py-4 px-6 border-b border-grey-light">1</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">1</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Smith</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Kursi Rotan</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">01/10/2021</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">2</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">JNE</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">1.000.000</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Terkirim</td>
-                                </tr>
-                                <tr class="hover:bg-grey-lighter">
-                                    <td class="py-4 px-6 border-b border-grey-light">1</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">1</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Smith</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Kursi Rotan</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">01/10/2021</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">2</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">JNE</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">1.000.000</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Terkirim</td>
-                                </tr>
-                                <tr class="hover:bg-grey-lighter">
-                                    <td class="py-4 px-6 border-b border-grey-light">1</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">1</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Smith</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Kursi Rotan</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">01/10/2021</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">2</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">JNE</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">1.000.000</td>
+                                    <td class="py-4 px-6 border-b border-grey-light">Singaraja</td>
                                     <td class="py-4 px-6 border-b border-grey-light">Terkirim</td>
                                 </tr>
                             </tbody>
