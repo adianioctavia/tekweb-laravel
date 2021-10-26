@@ -13,7 +13,6 @@
                         <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
                             <thead>
                                 <tr>
-                                    <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Id Pelanggan</th>
                                     <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Nama Pelanggan</th>
                                     <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Email</th>
                                     <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Nomor HP</th>
@@ -21,38 +20,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($user as $item)
+                                @if ($item->hasRole('pelanggan'))
                                 <tr class="hover:bg-grey-lighter">
-                                    <td class="py-4 px-6 border-b border-grey-light">1</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Smith</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">jonsmith@mail.com</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">081234567891</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Singaraja</td>
+                                    <td class="py-4 px-6 border-b border-grey-light">{{$item->name}}</td>
+                                    <td class="py-4 px-6 border-b border-grey-light">{{$item->email}}</td>
+                                    <td class="py-4 px-6 border-b border-grey-light">{{$item->pelanggan->no_hp}}</td>
+                                    <td class="py-4 px-6 border-b border-grey-light">{{$item->pelanggan->alamat}}</td>
                                 </tr>
-                                <tr class="hover:bg-grey-lighter">
-                                    <td class="py-4 px-6 border-b border-grey-light">2</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Smith</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">jonsmith@mail.com</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">081234567891</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Singaraja</td>
-                                </tr>
-                                <tr class="hover:bg-grey-lighter">
-                                    <td class="py-4 px-6 border-b border-grey-light">3</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Smith</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">jonsmith@mail.com</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">081234567891</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Singaraja</td>
-                                </tr>
-                                <tr class="hover:bg-grey-lighter">
-                                    <td class="py-4 px-6 border-b border-grey-light">4</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Smith</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">jonsmith@mail.com</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">081234567891</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">Singaraja</td>
-                                </tr>
+                                @endif
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                 </div>
+
+                {{$user->links()}}
             </main>
     </div>
     

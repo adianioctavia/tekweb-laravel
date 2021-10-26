@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pelanggan;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -37,6 +38,8 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'no_hp' => ['required', 'string', 'max:15'],
+            'alamat' => ['required', 'string', 'max:255'],
         ]);
 
         $user = User::create([
@@ -45,8 +48,18 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
         $user->attachRole('pelanggan');
-
         event(new Registered($user));
+
+        Pelanggan::create([
+            'user_id' => $user->id,
+            'nama' => $request->name,
+            'email' => $request->email,
+            'no_hp' => $request->no_hp,
+            'alamat' => $request->alamat,
+        ]);
+
+
+
 
         Auth::login($user);
 

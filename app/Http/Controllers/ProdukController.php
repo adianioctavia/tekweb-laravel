@@ -6,6 +6,7 @@ use App\Models\Kategori;
 use App\Models\Produk;
 use Database\Seeders\KategoriSeeder;
 use Illuminate\Auth\Events\Validated;
+use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -18,7 +19,7 @@ class ProdukController extends Controller
     public function index()
     {
         $produk = Produk::paginate(5);
-        return view('produk', [
+        return view('admin.produk', [
             'produk' => $produk,
         ]);
     }
@@ -44,12 +45,16 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->validate([
             'nama' => ['required', 'max:255'],
             'stok' => ['required', 'numeric'],
             'kategori_id' => ['required'],
-            'harga' => ['required', 'numeric']
+            'harga' => ['required', 'numeric'],
+            'filename' => ['required', 'image', 'file', 'max:2048'],
         ]);
+
+        $data['filename'] = $request->file('filename')->store('pic');
 
         Produk::create($data);
         return redirect('/produk');

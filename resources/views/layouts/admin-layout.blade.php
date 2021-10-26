@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Admin Template</title>
+    <title>Paw's Meubel</title>
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
     <!-- Tailwind -->
-    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
         .font-family-karla { font-family: karla; }
@@ -32,10 +33,6 @@
             <a href="{{route("dashboard")}}" class="{{(request()->routeIs('dashboard'))? 'active-nav-link' :''}} rounded-l-full flex items-center text-black py-4 pl-6 nav-item">
                 <i class="fas fa-tachometer-alt mr-3"></i>
                 Dashboard
-            </a>
-            <a href="{{route("akun")}}" class="{{(request()->routeIs('akun'))? 'active-nav-link' :''}} rounded-l-full flex items-center text-black py-4 pl-6 nav-item">
-                <i class="fas fa-users mr-3"></i>
-                Akun
             </a>
             <a href="{{route("pelanggan")}}" class="{{(request()->routeIs('pelanggan'))? 'active-nav-link' :''}} rounded-l-full flex items-center text-black py-4 pl-6 nav-item">
                 <i class="fas fa-user-tag mr-3"></i>
@@ -83,10 +80,6 @@
             <a href="{{route("dashboard")}}" class="{{(request()->routeIs('dashboard'))? 'active-nav-link' :''}} rounded-l-full flex items-center text-black py-4 pl-6 nav-item">
                 <i class="fas fa-tachometer-alt mr-3"></i>
                 Dashboard
-            </a>
-            <a href="{{route("akun")}}" class="{{(request()->routeIs('akun'))? 'active-nav-link' :''}} rounded-l-full flex items-center active-nav-link text-black py-4 pl-6 nav-item">
-                <i class="fas fa-users mr-3"></i>
-                Akun
             </a>
             <a href="{{route("pelanggan")}}" class="{{(request()->routeIs('pelanggan'))? 'active-nav-link' :''}} rounded-l-full flex items-center text-black py-4 pl-6 nav-item">
                 <i class="fas fa-user-tag mr-3"></i>

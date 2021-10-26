@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\ProdukController;
-use App\Models\Produk;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,15 +14,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 // Untuk Admin
 Route::group(['middleware' => ['auth', "role:admin"]], function () {
-    // Akun
-    Route::get('/akun', function () {
-        return view('admin.akun');
-    })->name('akun');
 
     // Pelanggan
-    Route::get('/pelanggan', function () {
-        return view('admin.pelanggan');
-    })->name('pelanggan');
+    Route::get('/pelanggan', [PelangganController::class, 'index'])->name('pelanggan');
 
     // Pembelian
     Route::get('/pembelian', function () {

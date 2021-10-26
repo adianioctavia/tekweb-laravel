@@ -31,6 +31,7 @@ class CreateDbSetup extends Migration
 
         Schema::create('tb_produk', function (Blueprint $table) {
             $table->id();
+            $table->string('filename', 255);
             $table->string('nama', '255');
             $table->integer('stok');
             $table->unsignedBigInteger('kategori_id');

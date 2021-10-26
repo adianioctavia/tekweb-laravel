@@ -45,6 +45,22 @@
                                 name="password_confirmation" required />
             </div>
 
+            
+            <!-- No HP -->
+            <div class="mt-4">
+                <x-label for="no_hp" :value="__('Nomor HP')" />
+
+                <x-input id="no_hp" class="block mt-1 w-full" type="text" name="no_hp" :value="old('no_hp')" required autofocus />
+            </div>
+
+
+            <!-- Alamat -->
+            <div class="mt-4">
+                <x-label for="alamat" :value="__('Alamat')" />
+
+                <x-input id="alamat" class="block mt-1 w-full" type="text" name="alamat" :value="old('alamat')" required autofocus />
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
